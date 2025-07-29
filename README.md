@@ -36,7 +36,7 @@ After=multi-user.target
 [Service]
 Type=oneshot
 # 8GB in bytes (8 * 1024³ = 8589934592)
-ExecStart=/usr/bin/bash -c "echo 8589934592 > /sys/block/zram0/disksize && mkswap /dev/zram0 && swapon -p 100 /dev/zram0"
+ExecStart=/usr/bin/bash -c "echo 8G > /sys/block/zram0/disksize && mkswap /dev/zram0 && swapon -p 100 /dev/zram0"
 RemainAfterExit=yes
 
 [Install]
